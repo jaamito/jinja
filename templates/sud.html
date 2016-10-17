@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<style type="text/css">
+	{% set h=1 %}
+	{%for h in cuadros%}{
+			{{p}}{
+         		background: blue;
+         	}
+     {% endfor %}
+     th, td {
+   		padding: 15px;
+	}
+    </style>
+</head>
+   <body>
+      <table border = 1 style="width:20%">
+		{% set i = 1 %}
+		{% set j = 1 %}
+		{% for i in range (9)%}
+         	<tr>
+         	{% for j in range (9)%}
+         		{% set p=(1+j+(i*9)) %}
+				<td id= {{p}}>{{p}}</td>
+			{% endfor %}  
+			</tr>
+         {% endfor %}
+      </table>
+      
+   </body>
+</html>

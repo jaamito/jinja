@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+   <body>
+   <style type="text/css">
+   	th, td {
+         padding: 15px;
+         border-collapse: collapse;
+      }
+      table {
+         border-collapse: collapse;
+      }
+	</style>
+      <table border = 1 style="width:40%">
+      	<tr>
+			<th>Lunes</th><th>Martes</th><th>Miercoles</th><th>Jueves</th>
+			<th>Viernes</th><th>Sabado</th><th>Domingo</th>
+		</tr>
+          {% set i = 1 %}
+          {% set j = 1 %}
+       {% for i in range (6)%}
+            <tr>
+            {% for j in range (7)%}
+            {% set x = (1+j+(i*7)) %}
+            {% if x <= 31 %}
+            <td>{{x}}</td> 
+            {% endif %}           
+         {% endfor %}  
+         </tr>
+         {% endfor %}
+      </table>
+      
+   </body>
+</html>
